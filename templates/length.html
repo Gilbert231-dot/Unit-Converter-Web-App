@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Page</title>
+</head>
+<center>
+    <body bgcolor="#f0f9f9">
+            <h1>unit converter</h1>
+            <table width="20%" cellpadding="1" cellspacing="0">
+                <tr>
+                    <td><a href="/length"><h2>📏Length</h2></a></td>
+                    <td><a href="/time"><h2>⏳ Time</h2></a></td>
+                </tr>
+            </table>
+            <hr width="50%">
+        <form action="/length" method="POST">
+            
+                <label>Enter value:</label>
+            <br>
+            <input type="number" name="value" step="any" width="100%" size="50" placeholder="Enter a number here..." required>
+            <br>
+            <br>
+            <br>
+            <br>
+             <table width="25%" cellpadding="1" cellspacing="0">
+                    <tr>
+                        <td>
+                            <label>From:</label>
+                            <select name="from_unit">
+                                <option value="kilometers">Kilometers</option>
+                                <option value="miles">Miles</option>
+                                <option value="meters">Meters</option>
+                                <option value="feets">Feets</option>
+                                <option value="centimeters">Centimeters</option>
+                                <option value="inches">Inches</option>
+                                <option value="yards">Yards</option>
+                            </select>
+                        </td>                       
+                        <td>                       
+                            <label>To:</label>
+                            <select name="to_unit">
+                                <option value="miles">Miles</option>
+                                <option value="kilometers">Kilometers</option>
+                                <option value="feets">Feets</option>
+                                <option value="meters">Meters</option>
+                                <option value="inches">Inches</option>
+                                <option value="centimeters">Centimeters</option>
+                                <option value="yards">Yards</option>
+                            </select>
+                        </td>
+                    </tr>
+             </table>
+                <br>
+                <br>
+                <br>
+                <h3>
+                <button type="submit">Convert</button>
+                </h3>
+        </form>    
+    {%if result %}
+        <h3>Result: {{value}}  {{from_unit}}  =  {{ result }}  {{to_unit}}</h3>
+    {% endif%}    
+
+    <a  href="/">Back to Home</a>
+    </body>
+</center>
+</html>
